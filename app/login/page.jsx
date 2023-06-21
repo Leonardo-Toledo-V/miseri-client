@@ -6,6 +6,7 @@ import React from 'react'
 export default function page() {
   return (
     <>
+    {/* xd */}
     <div className="w-full h-screen flex items-center">
         <div className="lg:relative w-full lg:w-1/2 h-full flex flex-col">
           <FormLogin/>
