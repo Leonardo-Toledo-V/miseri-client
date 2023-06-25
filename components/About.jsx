@@ -3,9 +3,9 @@ import React from 'react'
 export default function About() {
   return (
     <>
-      <div className='w-full h-screen mt-16'>
+      <div className='w-full h-screen mt-16' id='about'>
         <div className='flex flex-col'>
-            <div className=''>
+            <div className='mt-12'>
                 <h3 className='font-lato text-xl text-center'>
                 Nuestra misión es proporcionar soluciones innovadoras de monitoreo ambiental que promuevan la seguridad de las personas.
                 </h3>
