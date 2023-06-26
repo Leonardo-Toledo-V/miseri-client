@@ -4,7 +4,7 @@ export default function TextIndex() {
     return (
         <>
             <div className='w-full' id='home'>
-                <div className='flex flex-col lg:flex-row items-center justify-center lg:justify-between lg:pt-12 lg:pl-9'>
+                <div className='flex flex-col lg:flex-row  justify-center lg:justify-between lg:pt-12 lg:pl-9'>
                             <div className='max-w-[650px] p-2 mb-12'>
                                 <h2 className='text-3xl lg:text-6xl font-playfair m-6 lg:pt-24 text-center lg:text-left'>
                                 Un vistazo a tu ambiente, un paso hacia la tranquilidad.

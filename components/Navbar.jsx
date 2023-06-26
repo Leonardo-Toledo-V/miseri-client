@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 import { Link } from 'react-scroll';
+import NextLink  from 'next/link';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 export default function Navbar() {
@@ -32,12 +33,11 @@ export default function Navbar() {
                 <AiOutlineMenu size={20} className='mr-2 text-[#141517]'/>
               </div>
             </div>
-            <Link
-            smooth={true}
-            spy={true}
-            to='home'>
+            <NextLink
+            href="/login"
+            >
             <h3 className='font-lato text-base hover:animate-pulse hover:scale-110 duration-300 cursor-pointer text-[#18181A] font-black hover:text-[#393939] mr-4 md:mr-12'>Miseri ©</h3>
-          </Link>
+          </NextLink>
         </div>
       <div  onClick={handleNav} className={nav ? 'fixed left-0 top-0 w-full h-screen bg-black/70 z-50': ''}>
           <div className={nav ? 'fixed left-0 top-0 w-[66%] md:w-[38%] h-screen bg-[#141517] p-10 ease-in duration-500 ':'fixed left-[-100%] top-0 p-10 ease-in duration-50'}>

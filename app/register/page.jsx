@@ -1,11 +1,13 @@
 "use client"
 import FormRegister from '@/components/FormRegister'
 import PhotoRegister from '@/components/PhotoRegister'
+import TransitionEffect from '@/components/Transitions/TransitionEffect'
 import React from 'react'
 
 export default function page() {
   return (
     <>
+    <TransitionEffect/>
         <div className="w-full h-screen flex items-center">
         <div className="relative w-1/2 h-full sm:flex flex-col hidden">
             <PhotoRegister/>

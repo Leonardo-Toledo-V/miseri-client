@@ -1,20 +1,22 @@
 "use client"
-import FormLogin from '@/components/FormLogin'
-import PhotoLogin from '@/components/PhotoLogin'
-import React from 'react'
+import React from 'react';
+import FormLogin from '@/components/FormLogin';
+import PhotoLogin from '@/components/PhotoLogin';
+import TransitionEffect from '@/components/Transitions/TransitionEffect';
 
-export default function page() {
+export default function Page() {
   return (
-    <>
-    {/* xd */}
-    <div className="w-full h-screen flex items-center">
+      <>
+      <TransitionEffect/>
+      <div className="w-full h-screen flex items-center">
         <div className="lg:relative w-full lg:w-1/2 h-full flex flex-col">
-          <FormLogin/>
+          <FormLogin />
         </div>
         <div className="relative w-1/2 h-full lg:flex flex-col hidden">
-          <PhotoLogin/>
+          <PhotoLogin />
         </div>
       </div>
-    </>
-  )
+      </>
+  );
 }
+
