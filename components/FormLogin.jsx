@@ -1,11 +1,21 @@
 import Link from "next/link";
 import React from "react";
+import {useRouter} from "next/navigation";
 
 export default function FormLogin() {
+    const router = useRouter()
+   
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        router.push('/dashboard')
+    }
+
+
     return (
         <>
             <div className="h-full w-full p-4 sm:p-16 max-w-[900px] flex flex-col">
-                <form action="">
+                <form onSubmit={handleSubmit}>
                     <div className="sm:mx-16 mt-16 flex flex-col">
                         <div>
                             <h3 className="font-playfair text-4xl">Bienvenido</h3>
