@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import {useRouter} from "next/navigation";
 
@@ -95,16 +94,7 @@ export default function FormLogin() {
                     </span>
                     Ingresar con Google
                 </button>
-                <div className="flex justify-center items-center font-lato text-sm mt-4">
-                    <div className="mx-2 text-[#656565]">
-                        <p>¿No tienes una cuenta?</p>
-                    </div>
-                    <div className="mx-2 text-[#373737] cursor-pointer hover:border-b-2 duration-300">
-                        <Link href="/register">
-                        <p>Registrarse</p>
-                        </Link>
-                    </div>
-               </div>
+
                </div>
                 </form>
             </div>

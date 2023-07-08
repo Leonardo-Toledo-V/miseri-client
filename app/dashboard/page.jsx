@@ -1,18 +1,4 @@
 "use client"
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
@@ -29,14 +15,15 @@ import {
   EyeDropperIcon
 } from '@heroicons/react/24/outline'
 import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
+  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: false },
+  { name: 'Reports', href: '/reports', icon: ChartBarIcon, current: false },
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Your Profile', href: 'profile' },
+  { name: 'Settings', href: 'settings' },
+  { name: 'Sign out', href: '/' },
 ]
 
 function classNames(...classes) {
@@ -55,16 +42,9 @@ const stats = [
 export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
+
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-40 md:hidden" onClose={setSidebarOpen}>
@@ -90,7 +70,7 @@ export default function Example() {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-gray-800 pt-5 pb-4">
+                <Dialog.Panel className="relative flex w-full max-w-xs flex-1 flex-col bg-[#18181A] pt-5 pb-4">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-300"
@@ -126,7 +106,7 @@ export default function Example() {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? 'bg-gray-900 text-white'
+                              ? 'bg-slate-700 text-white'
                               : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                           )}
@@ -155,8 +135,8 @@ export default function Example() {
         {/* Static sidebar for desktop */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
           {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex min-h-0 flex-1 flex-col bg-gray-800">
-            <div className="flex h-16 flex-shrink-0 items-center bg-gray-900 px-4">
+          <div className="flex min-h-0 flex-1 flex-col bg-[#18181A]">
+            <div className="flex h-16 flex-shrink-0 items-center bg-[#18181A] px-4">
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
@@ -170,7 +150,7 @@ export default function Example() {
                     key={item.name}
                     href={item.href}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      item.current ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'group flex items-center px-2 py-2 text-sm font-medium rounded-md'
                     )}
                   >
@@ -233,7 +213,7 @@ export default function Example() {
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
-                            <a
+                            <Link
                               href={item.href}
                               className={classNames(
                                 active ? 'bg-gray-100' : '',
@@ -241,7 +221,7 @@ export default function Example() {
                               )}
                             >
                               {item.name}
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
@@ -255,7 +235,7 @@ export default function Example() {
           <main className="flex-1">
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <h1 className="text-2xl font-semibold text-gray-900">Datos en tiempo real</h1>
+                <h1 className="text-2xl font-semibold text-[#18181A]">Datos en tiempo real</h1>
               </div>
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
               <div>
@@ -269,13 +249,13 @@ export default function Example() {
             className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
           >
             <dt>
-              <div className="absolute rounded-md bg-gray-800 p-3">
+              <div className="absolute rounded-md bg-[#18181A] p-3">
                 <item.icon className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
               <p className="ml-16 truncate text-sm font-medium text-gray-500">{item.name}</p>
             </dt>
             <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
-              <p className="text-2xl font-semibold text-gray-900">{item.stat}</p>
+              <p className="text-2xl font-semibold text-[#18181A]">{item.stat}</p>
               <p
                 className={classNames(
                   item.changeType === 'increase' ? 'text-green-600' : 'text-red-600',
@@ -301,7 +281,7 @@ export default function Example() {
     {/* Ends here */}
     </div>
                 <div className="py-4">
-                  <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+                  <div className="h-64 rounded-lg border-4 border-dashed border-gray-200" />
                 </div>
                 {/* /End replace */}
               </div>

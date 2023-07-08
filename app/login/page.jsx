@@ -1,10 +1,10 @@
 "use client"
 import React from 'react';
-import FormLogin from '@/components/FormLogin';
-import PhotoLogin from '@/components/PhotoLogin';
+import FormLogin from '@/components/Login/FormLogin';
+import PhotoLogin from '@/components/Login/PhotoLogin';
 import TransitionEffect from '@/components/Transitions/TransitionEffect';
 
-export default function Page() {
+export default function Login() {
   return (
       <>
       <TransitionEffect/>

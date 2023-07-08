@@ -1,11 +1,13 @@
+"use client"
+import Image from 'next/image'
 import React from 'react'
 
 export default function TextIndex() {
     return (
         <>
             <div className='w-full' id='home'>
-                <div className='flex flex-col lg:flex-row  justify-center lg:justify-between lg:pt-12 lg:pl-9'>
-                            <div className='max-w-[650px] p-2 mb-12'>
+                <div className='flex flex-col lg:flex-row justify-center lg:justify-between lg:pt-12 lg:pl-9'>
+                            <div className='lg:max-w-[650px] p-2 mb-12'>
                                 <h2 className='text-3xl lg:text-6xl font-playfair m-6 lg:pt-24 text-center lg:text-left'>
                                 Un vistazo a tu ambiente, un paso hacia la tranquilidad.
                                 </h2>
@@ -19,8 +21,21 @@ export default function TextIndex() {
                                     </div>
                                 </div>
                             </div>
-                        <div className='grayscale-[30%]'>
-                            <img className='flex h-[400px] lg:max-w-[650px] lg:h-[600px] bg-cover' src="rasp.png" alt="raspberry" />
+                        <div className='relative w-full h-[400px] lg:max-w-[650px] lg:h-[600px]'>
+                            <Image 
+                            fill
+                            priority
+                            sizes='(max-width: 650px) 1000vw, 700px'
+                            style={{
+                                objectFit: 'cover',
+                                loading: 'lazy',
+                                position: 'absolute',
+                            }}  
+                            src="/rasp.png" 
+                            alt="raspberry"
+                            className='transition-opacity opacity-0 duration-[2s]'
+                            onLoadingComplete={(image) => image.classList.remove('opacity-0')}
+                            />
                         </div>
                 </div>
             </div>
