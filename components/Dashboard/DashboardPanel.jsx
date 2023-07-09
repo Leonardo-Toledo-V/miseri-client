@@ -26,22 +26,16 @@ function classNames(...classes) {
 
 
 
-export default function DashboardPanel(props) {
+export default function DashboardPanel({children}) {
     return (
         <div className="flex flex-col md:pl-64">
             <NavbarDashboard />
             <main className="flex-1">
                 <div className="py-6">
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                        <h1 className="text-2xl font-semibold text-[#18181A]">{props.title}</h1>
-                    </div>
-                    <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+                    <div className="xl:mx-32 px-4 sm:px-6 md:px-8">
                         <div>
-                          {props.children}
+                          {children}
                         </div>
-                        {/*<div className="py-4">
-                            <div className="h-64 rounded-lg border-4 border-dashed border-gray-200" />
-                        </div> */}
                     </div>
                 </div>
             </main>
