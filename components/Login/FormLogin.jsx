@@ -1,13 +1,26 @@
-import React from "react";
-import {useRouter} from "next/navigation";
+"use client"
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function FormLogin() {
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
     const router = useRouter()
-   
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        router.push('/dashboard')
+        console.log(data);
     }
 
 
@@ -30,15 +43,17 @@ export default function FormLogin() {
                             <input
                                 className="bg-[#F3F6FB] py-1.5 pl-2 text-sm text-left"
                                 type="text"
+                                name="email"
                                 id="email"
                                 placeholder="Ex: example@miseri.es"
                                 autoComplete="off"
                                 required
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="flex flex-col mt-4">
                             <label
-                                htmlFor="email"
+                                htmlFor="password"
                                 className="font-lato font-black mb-2 text-sm text-[#656565]"
                             >
                                 Contraseña:
@@ -46,10 +61,12 @@ export default function FormLogin() {
                             <input
                                 className="bg-[#F3F6FB] py-1.5 pl-2 text-xs text-left"
                                 type="password"
-                                id="email"
+                                name="password"
+                                id="password"
                                 placeholder="●●●●●●●●●●"
                                 autoComplete="off"
                                 required
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -77,25 +94,25 @@ export default function FormLogin() {
                             <input className="bg-[#373737] text-white font-lato w-full py-1 hover:bg-[#4e4e4e] duration-300 cursor-pointer" type="submit" />
                         </div>
                         <div className="flex items-center justify-center mt-4 ">
-                            <hr className="w-52"/>
+                            <hr className="w-52" />
                             <p className="font-lato text-[#656565] mx-4">o</p>
                             <hr className="w-52" />
                         </div>
                     </div>
                 </form>
                 <form action="">
-               <div className="sm:mx-16">
-               <button
-                    type="submit"
-                    className="mt-4 font-lato text-[0.920rem] border-[0.1px] w-full hover:border-b-2 py-1 duration-300 cursor-pointer flex items-center justify-center"
-                >
-                    <span>
-                        <img className="h-3 w-3 sm:h-5 sm:w-5 mx-4" src="google.png" alt="google" />
-                    </span>
-                    Ingresar con Google
-                </button>
+                    <div className="sm:mx-16">
+                        <button
+                            type="submit"
+                            className="mt-4 font-lato text-[0.920rem] border-[0.1px] w-full hover:border-b-2 py-1 duration-300 cursor-pointer flex items-center justify-center"
+                        >
+                            <span>
+                                <img className="h-3 w-3 sm:h-5 sm:w-5 mx-4" src="google.png" alt="google" />
+                            </span>
+                            Ingresar con Google
+                        </button>
 
-               </div>
+                    </div>
                 </form>
             </div>
         </>

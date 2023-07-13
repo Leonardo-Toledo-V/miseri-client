@@ -1,12 +1,17 @@
 import React from 'react'
-
-import { ChartBarIcon, HomeIcon} from '@heroicons/react/24/outline'
 import Image from 'next/image';
+import {TbReportAnalytics, TbLayoutDashboard} from "react-icons/tb"
+import {WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer} from "react-icons/wi";
+
 
 
 const navigation = [
-    { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: false },
-    { name: 'Reports', href: '/reports', icon: ChartBarIcon, current: false },
+    { name: 'Panel', href: '/dashboard', icon: TbLayoutDashboard, current: false },
+    { name: 'Aire', href: '/air', icon: WiStrongWind, current: false },
+    { name: 'Intensidad de Luz', href: '/light', icon: WiHorizonAlt, current: false },
+    { name: 'Humedad', href: '/reports', icon: WiHumidity, current: false },
+    { name: 'Temperatura', href: '/reports', icon: WiThermometer, current: false },
+    { name: 'Reporte', href: '/reports', icon: TbReportAnalytics, current: false },
 ];
 
   function classNames(...classes) {
