@@ -10,6 +10,7 @@ export default function PhotoLogin() {
             className="w-full h-screen object-cover"
             src="/PhotoLogin.png"
             alt='photocachonda'
+            priority={false}
         /> 
     </div>
   )

@@ -4,7 +4,7 @@ import { NavbarContextProvider } from '@/hooks/NavbarProvider'
 
 export const metadata = {
   title: 'Miseri',
-  description: 'lolo el peludo',
+  description: 'Miseri sense',
 }
 
 export default function RootLayout({ children }) {

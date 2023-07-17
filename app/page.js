@@ -6,12 +6,12 @@ import TextIndex from "@/components/Landing/TextIndex";
 
 export default function Home() {
   return (
-   <>
-    <Navbar/>
-    <TextIndex/>
-    <About/>
-    <Reviews/>
-    <Footer/>
-  </>
+    <>
+      <Navbar />
+      <TextIndex />
+      <About />
+      <Reviews />
+      <Footer />
+    </>
   )
 }

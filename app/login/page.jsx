@@ -6,8 +6,8 @@ import TransitionEffect from '@/components/Transitions/TransitionEffect';
 
 export default function Login() {
   return (
-      <>
-      <TransitionEffect/>
+    <>
+      <TransitionEffect />
       <div className="w-full h-screen flex items-center">
         <div className="lg:relative w-full lg:w-1/2 h-full flex flex-col">
           <FormLogin />
@@ -16,7 +16,7 @@ export default function Login() {
           <PhotoLogin />
         </div>
       </div>
-      </>
+    </>
   );
 }
 

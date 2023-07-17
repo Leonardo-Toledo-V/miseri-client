@@ -1,12 +1,20 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import axios from "@/libs/axios";
+import Cookies from "js-cookie";
 
 export default function FormLogin() {
+
     const [data, setData] = useState({
         email: "",
         password: ""
     });
+    const [token, setToken] = useState("");
+    useEffect(() => {
+        Cookies.set('next-auth',token);
+    },[token])
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -20,9 +28,15 @@ export default function FormLogin() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(data);
+        axios.post('/miseri/api/user/sign-in', JSON.stringify({
+            "email": data.email,
+            "password": data.password
+        })).then(function(response){
+            setToken(JSON.stringify(response.data.data))
+        }).catch(function(error){
+            console.log(error);
+        });
     }
-
 
     return (
         <>
@@ -69,7 +83,6 @@ export default function FormLogin() {
                                 onChange={handleChange}
                             />
                         </div>
-
                         <div className="flex justify-between mb-8 mt-6">
                             <div className="flex items-center">
                                 <input
@@ -107,11 +120,15 @@ export default function FormLogin() {
                             className="mt-4 font-lato text-[0.920rem] border-[0.1px] w-full hover:border-b-2 py-1 duration-300 cursor-pointer flex items-center justify-center"
                         >
                             <span>
-                                <img className="h-3 w-3 sm:h-5 sm:w-5 mx-4" src="google.png" alt="google" />
+                                <Image 
+                                width={500}
+                                height={500}
+                                className="h-3 w-3 sm:h-5 sm:w-5 mx-4" 
+                                src="google.png" 
+                                alt="google" />
                             </span>
                             Ingresar con Google
                         </button>
-
                     </div>
                 </form>
             </div>

@@ -9,12 +9,12 @@ export default function Settings() {
   return (
     <>
       <div>
-        <SideBarMobile/>
+        <SideBarMobile />
         {/* Static sidebar for desktop */}
-        <SideBarDesktop/>
-          <DashboardPanel>
-            <DashboardPage/>
-          </DashboardPanel>
+        <SideBarDesktop />
+        <DashboardPanel>
+          <DashboardPage />
+        </DashboardPanel>
       </div>
     </>
   )
