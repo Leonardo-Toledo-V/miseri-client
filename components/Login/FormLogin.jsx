@@ -1,10 +1,11 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import axios from "@/libs/axios";
 import Cookies from "js-cookie";
 import Link from "next/link";
+import { BiShowAlt } from "react-icons/bi"
+
 
 export default function FormLogin() {
 
@@ -17,6 +18,8 @@ export default function FormLogin() {
 
     const [error, setError] = useState(false);
 
+    const [showPassword, setShowPassoword] = useState(false);
+
     useEffect(() => {
         Cookies.set('miseri-auth', token);
     }, [token])
@@ -28,6 +31,10 @@ export default function FormLogin() {
             [name]: value,
         }));
         setError(false);
+    };
+
+    const handleShowPassword = () => {
+        setShowPassoword(!showPassword);
     };
 
     const router = useRouter()
@@ -84,16 +91,24 @@ export default function FormLogin() {
                             >
                                 Contraseña:
                             </label>
-                            <input
-                                className="bg-[#F3F6FB] py-1.5 pl-2 text-xs text-left"
-                                type="password"
-                                name="password"
-                                id="password"
-                                placeholder="●●●●●●●●●●"
-                                autoComplete="off"
-                                required
-                                onChange={handleChange}
-                            />
+                            <div className="flex justify-between">
+                                <input
+                                    className="bg-[#F3F6FB] py-1.5 pl-2 text-sm text-left w-5/6"
+                                    type={showPassword ? "text": "password"}
+                                    name="password"
+                                    id="password"
+                                    placeholder={showPassword ? "yourpasswordhere": "●●●●●●●●●●"}
+                                    autoComplete="off"
+                                    required
+                                    onChange={handleChange}
+                                />
+                                <a
+                                    onClick={handleShowPassword}
+                                    className={showPassword ? "flex relative justify-center items-center bg-[#F3F6FB] text-gray-600 cursor-pointer w-1/6" : "flex relative justify-center items-center bg-[#F3F6FB] text-gray-300 cursor-pointer w-1/6"}
+                                >
+                                    <BiShowAlt className="w-5 h-5" />
+                                </a>
+                            </div>
                         </div>
                         <div className="flex justify-start mb-8 mt-6">
                             <div className="flex items-center">

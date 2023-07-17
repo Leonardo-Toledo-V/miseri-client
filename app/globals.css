@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .tableTitle{
+        @apply py-3 px-6 text-sm text-gray-800 font-lato
+    }
+    .tableCard{
+        @apply py-3 px-6 text-sm text-gray-500 whitespace-nowrap font-lato
+    }
+
+};

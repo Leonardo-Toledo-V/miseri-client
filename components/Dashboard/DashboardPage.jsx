@@ -24,7 +24,7 @@ const stats = [
     stat: "0.72%",
     icon: GiGasMask,
     change: "0.03%",
-    changeType: "decrase",
+    changeType: "decrease",
   },
   {
     id: 3,
@@ -68,7 +68,7 @@ export default function DashboardPage() {
           <main className="flex-1">
             <div className='px-4 pb-12 lg:pb-16'>
               <div>
-                <h1 className="text-lg font-playfair leading-6 text-gray-900">
+                <h1 className="text-lg font-semibold leading-6 text-gray-600">
                   Datos en tiempo real
                 </h1>
               </div>
