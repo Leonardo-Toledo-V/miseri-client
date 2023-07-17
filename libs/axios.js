@@ -1,7 +1,8 @@
 import Axios from 'axios';
+import Cookies from 'js-cookie';
+
 
 const axios = Axios.create({
-    method: 'post',
     maxBodyLength: Infinity,
     baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
     headers: {

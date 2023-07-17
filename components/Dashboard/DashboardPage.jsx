@@ -40,7 +40,7 @@ const stats = [
     changeType: "increase",
   },
   {
-    id: 1,
+    id: 4,
     name: "Niveles de humedad",
     stat: "86%",
     icon: EyeDropperIcon,
@@ -48,7 +48,7 @@ const stats = [
     changeType: "increase",
   },
   {
-    id: 2,
+    id: 5,
     name: "Temperatura",
     stat: "23.4°",
     icon: FireIcon,
@@ -56,7 +56,7 @@ const stats = [
     changeType: "increase",
   },
   {
-    id: 3,
+    id: 6,
     name: "Batería",
     stat: "63%",
     icon: Battery100Icon,
