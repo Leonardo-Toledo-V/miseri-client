@@ -8,9 +8,9 @@ export default function PhotoLogin() {
             width={3303}
             height={3456}
             className="w-full h-screen object-cover"
-            src="/PhotoLogin.png"
-            alt='photocachonda'
-            priority={false}
+            src="/login.webp"
+            alt='login'
+            priority={true}
         /> 
     </div>
   )

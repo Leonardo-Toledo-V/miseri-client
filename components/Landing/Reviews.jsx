@@ -12,12 +12,12 @@ export default function Reviews() {
                         <h2 className='text-xl md:text-4xl font-playfair text-center'> Lo que dicen de nosotros</h2>
                         <hr className="w-32 md:w-56"/>
                     </div>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 justify-items-center mt-6 lg:mx-36 '>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 justify-items-center mt-6 lg:mx-36 grayscale '>
                         <div className='col-span-1 max-w-sm p-4 cursor-pointer'>
                             <div className='flex justify-center md:w-[347px] md:h-[463px]'>
                                 <Image
                                     className="bg-cover"
-                                    src="/rasp.png"
+                                    src="/img-1.webp"
                                     width={347}
                                     height={463}
                                     alt="review image"
@@ -32,7 +32,7 @@ export default function Reviews() {
                         <div className='col-span-1 max-w-sm p-4 cursor-pointer'>
                             <div className='flex justify-center md:w-[347px] md:h-[463px]'>
                                 <Image
-                                    src="/rasp.png"
+                                    src="/img-2.webp"
                                     width={347}
                                     height={463}
                                     alt="review image"
@@ -47,7 +47,7 @@ export default function Reviews() {
                         <div className='sm:col-span-2 xl:col-span-1 max-w-sm p-4 cursor-pointer'>
                             <div className='flex justify-center md:w-[347px] md:h-[463px]'>
                                 <Image
-                                    src="/rasp.png"
+                                    src="/img-3.webp"
                                     width={347}
                                     height={463}
                                     alt="review image"

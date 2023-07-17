@@ -31,9 +31,9 @@ export default function TextIndex() {
                                 loading: 'lazy',
                                 position: 'absolute',
                             }}  
-                            src="/rasp.png" 
+                            src="/rasp.webp" 
                             alt="raspberry"
-                            className='transition-opacity opacity-0 duration-[2s]'
+                            className='transition-opacity opacity-0 duration-[2s] grayscale'
                             onLoadingComplete={(image) => image.classList.remove('opacity-0')}
                             />
                         </div>
