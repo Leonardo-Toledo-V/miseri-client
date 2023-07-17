@@ -1,14 +1,9 @@
 "use client";
 import React from 'react'
-import {
-  CloudIcon,
-  LightBulbIcon,
-  Battery100Icon,
-  FireIcon,
-  ExclamationTriangleIcon,
-  EyeDropperIcon,
-} from "@heroicons/react/24/outline";
+import { Battery100Icon } from "@heroicons/react/24/outline";
 import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/20/solid";
+import { WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer } from "react-icons/wi";
+import {GiGasMask} from "react-icons/gi"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -19,7 +14,7 @@ const stats = [
     id: 1,
     name: "Calidad de aire",
     stat: "Buena",
-    icon: CloudIcon,
+    icon: WiStrongWind,
     change: "Similar a la de ayer",
     changeType: "increase",
   },
@@ -27,7 +22,7 @@ const stats = [
     id: 2,
     name: "Gas",
     stat: "0.72%",
-    icon: ExclamationTriangleIcon,
+    icon: GiGasMask,
     change: "0.03%",
     changeType: "decrase",
   },
@@ -35,7 +30,7 @@ const stats = [
     id: 3,
     name: "Intensidad de luz",
     stat: "87.37%",
-    icon: LightBulbIcon,
+    icon: WiHorizonAlt,
     change: "31%",
     changeType: "increase",
   },
@@ -43,7 +38,7 @@ const stats = [
     id: 4,
     name: "Niveles de humedad",
     stat: "86%",
-    icon: EyeDropperIcon,
+    icon: WiHumidity,
     change: "67%",
     changeType: "increase",
   },
@@ -51,7 +46,7 @@ const stats = [
     id: 5,
     name: "Temperatura",
     stat: "23.4°",
-    icon: FireIcon,
+    icon: WiThermometer,
     change: "0.4%",
     changeType: "increase",
   },
