@@ -19,9 +19,6 @@ export default function Dashboard() {
     }
   });
 
-
-
-
   useEffect(() => {
     socket.on('data', (data) => {
       console.log(`Data recibida del servidor: ${data}`)
