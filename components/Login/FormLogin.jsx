@@ -11,9 +11,11 @@ export default function FormLogin() {
         email: "",
         password: ""
     });
-    const [token, setToken] = useState("");
+
+    const [token, setToken] = useState();
+
     useEffect(() => {
-        Cookies.set('next-auth',token);
+        Cookies.set('miseri-auth',token);
     },[token])
 
     const handleChange = (event) => {
@@ -32,7 +34,10 @@ export default function FormLogin() {
             "email": data.email,
             "password": data.password
         })).then(function(response){
-            setToken(JSON.stringify(response.data.data))
+            setToken((response.data.data))
+            if (!token){
+                router.push("/dashboard")
+            }
         }).catch(function(error){
             console.log(error);
         });

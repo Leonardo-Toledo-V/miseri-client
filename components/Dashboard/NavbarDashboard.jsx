@@ -1,18 +1,21 @@
 import { Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import Link from 'next/link';
 import {NavbarContext} from "@/hooks/NavbarProvider"
-
 import { Bars3BottomLeftIcon, BellIcon, UserIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 const userNavigation = [
-    { name: 'Your Profile', href: 'profile' },
-    { name: 'Settings', href: 'settings' },
     { name: 'Sign out', href: '/' },
 ]
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
+
+    const handleLogOut = () => {
+        Cookies.remove('miseri-auth')
+    }
+
 
 export default function NavbarDashboard() {
     const {setSidebarOpen} = useContext(NavbarContext)
@@ -60,6 +63,7 @@ export default function NavbarDashboard() {
                                     <Menu.Item key={item.name}>
                                         {({ active }) => (
                                             <Link
+                                                onClick={handleLogOut}
                                                 href={item.href}
                                                 className={classNames(
                                                     active ? 'bg-gray-100' : '',
