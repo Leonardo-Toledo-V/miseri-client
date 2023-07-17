@@ -1,14 +1,21 @@
+'use client'
 import { Fragment, useContext, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ChartBarIcon, HomeIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { NavbarContext } from '@/hooks/NavbarProvider'
+import { XMarkIcon } from '@heroicons/react/24/outline'
+import {TbReportAnalytics, TbLayoutDashboard} from "react-icons/tb"
+import {WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer} from "react-icons/wi";
 import Image from 'next/image'
 
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: false },
-  { name: 'Reports', href: '/reports', icon: ChartBarIcon, current: false },
-]
+  { name: 'Panel', href: '/dashboard', icon: TbLayoutDashboard, current: false },
+  { name: 'Aire', href: '/dashboard/air', icon: WiStrongWind, current: false },
+  { name: 'Intensidad de Luz', href: '/dashboard/light', icon: WiHorizonAlt, current: false },
+  { name: 'Humedad', href: '/dashboard/humidity', icon: WiHumidity, current: false },
+  { name: 'Temperatura', href: '/dashboard/temperature', icon: WiThermometer, current: false },
+  { name: 'Reporte', href: '/dashboard/reports', icon: TbReportAnalytics, current: false },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

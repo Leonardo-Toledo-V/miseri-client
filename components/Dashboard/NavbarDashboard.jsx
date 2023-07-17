@@ -1,3 +1,4 @@
+'use client'
 import { Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import {NavbarContext} from "@/hooks/NavbarProvider"
