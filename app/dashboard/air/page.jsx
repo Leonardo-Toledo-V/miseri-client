@@ -3,7 +3,7 @@ import DashboardPanel from '@/components/Dashboard/DashboardPanel'
 import React, { useEffect, useState } from 'react'
 import axios from '@/libs/axios'
 import Cookies from 'js-cookie'
-import {AiOutlineLoading3Quarters} from 'react-icons/ai'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 import TableFrequency from '@/components/Dashboard/TableFrequency'
 
 export default function AirPage() {
@@ -20,20 +20,21 @@ export default function AirPage() {
         }).catch(function (err) {
             setError(err)
         });
-    }, [])
+    }, []);
 
     if (data.length === 0) {
         return (
-        <>
-            <DashboardPanel>
-                <div className='flex justify-center items-center w-full h-full'>
-                    <div className='w-[40px] text-gray-400'>
-                        <AiOutlineLoading3Quarters className='animate-spin w-full h-full mt-32'/>
+            <>
+                <DashboardPanel>
+                    <div className='flex justify-center items-center w-full h-full'>
+                        <div className='w-[40px] text-gray-400'>
+                            <AiOutlineLoading3Quarters className='animate-spin w-full h-full mt-32' />
+                        </div>
                     </div>
-                </div>
-            </DashboardPanel>
-        </>
-    )}
+                </DashboardPanel>
+            </>
+        )
+    }
 
     if (error) {
         return (
@@ -50,7 +51,7 @@ export default function AirPage() {
     return (
         <>
             <DashboardPanel>
-                <TableFrequency data={data}/>
+                <TableFrequency data={data} />
             </DashboardPanel>
         </>
     )

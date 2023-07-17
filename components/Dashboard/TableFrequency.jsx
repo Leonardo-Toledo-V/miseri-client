@@ -3,9 +3,8 @@ import Card from './Card';
 
 export default function TableFrequency(props) {
 
-    const data = props.data;
-    console.log(data)
-
+    const data = props.data;   
+    
     return (
         <>
             <div className='overflow-auto block'>
@@ -64,8 +63,6 @@ export default function TableFrequency(props) {
                 <Card data={data.variance} />
                 <Card data={data.standardDeviation} />
             </div>
-
-
         </>
     )
 }
