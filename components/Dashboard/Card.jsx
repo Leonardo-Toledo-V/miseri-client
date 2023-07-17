@@ -10,10 +10,10 @@ export default function Card(props) {
             <div className="relative overflow-hidden bg-white px-4 pt-5 pb-8 shadow sm:px-6 sm:pt-6">
                 <dt className='flex flex-col items-center'>
                     <p className="truncate text-medium font-lato  text-[#18181A]">
-                        data
+                        {data.name}
                     </p>
                     <p className="text-sm font-lato text-gray-500">
-                        {data}
+                        {data.data}
                     </p>
                 </dt>
                 <dd className="flex items-baseline pb-2">
