@@ -3,6 +3,7 @@ import DashboardPanel from '@/components/Dashboard/DashboardPanel'
 import React, { useEffect, useState } from 'react'
 import axios from '@/libs/axios'
 import Cookies from 'js-cookie'
+import {AiOutlineLoading3Quarters} from 'react-icons/ai'
 
 export default function AirPage() {
 
@@ -21,12 +22,17 @@ export default function AirPage() {
     }, [])
 
     if (data.length === 0) {
-        return (<>
+        return (
+        <>
             <DashboardPanel>
-                Loading data
+                <div className='flex justify-center items-center w-full h-full'>
+                    <div className='w-[40px] text-gray-400'>
+                        <AiOutlineLoading3Quarters className='animate-spin w-full h-full mt-32'/>
+                    </div>
+                </div>
             </DashboardPanel>
-        </>)
-    }
+        </>
+    )}
 
     if (error) {
         return (

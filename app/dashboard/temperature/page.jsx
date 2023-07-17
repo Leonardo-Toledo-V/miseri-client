@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import DashboardPanel from '@/components/Dashboard/DashboardPanel'
 import Cookies from 'js-cookie';
 import axios from '@/libs/axios';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export default function TemperaturePage() {
 
@@ -24,13 +25,16 @@ export default function TemperaturePage() {
 
     if (data.length === 0) {
         return (
-            <>
-                <DashboardPanel>
-                    Loading data
-                </DashboardPanel>
-            </>
-        );
-    }
+        <>
+            <DashboardPanel>
+                <div className='flex justify-center items-center w-full h-full'>
+                    <div className='w-[40px] text-gray-400'>
+                        <AiOutlineLoading3Quarters className='animate-spin w-full h-full mt-32'/>
+                    </div>
+                </div>
+            </DashboardPanel>
+        </>
+    )}
 
     if (error) {
         return (
