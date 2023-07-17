@@ -4,6 +4,7 @@ import DashboardPanel from '@/components/Dashboard/DashboardPanel'
 import axios from '@/libs/axios';
 import Cookies from 'js-cookie';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import TableFrequency from '@/components/Dashboard/TableFrequency';
 
 export default function LightPage() {
 
@@ -51,14 +52,7 @@ export default function LightPage() {
     return (
         <>
             <DashboardPanel>
-                <pre className=''>
-                    {JSON.stringify({
-                        data
-                    },
-                        null,
-                        2
-                    )}
-                </pre>
+                <TableFrequency data={data} />
             </DashboardPanel>
         </>
     )

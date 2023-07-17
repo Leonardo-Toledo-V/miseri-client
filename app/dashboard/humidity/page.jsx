@@ -1,5 +1,6 @@
 "use client"
 import DashboardPanel from '@/components/Dashboard/DashboardPanel'
+import TableFrequency from '@/components/Dashboard/TableFrequency';
 import axios from '@/libs/axios';
 import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
@@ -49,15 +50,8 @@ export default function HumidityPage() {
 
     return (
         <>
-            <DashboardPanel>
-                <pre className=''>
-                    {JSON.stringify({
-                        data
-                    },
-                        null,
-                        2
-                    )}
-                </pre>
+           <DashboardPanel>
+                <TableFrequency data={data} />
             </DashboardPanel>
         </>
     )
