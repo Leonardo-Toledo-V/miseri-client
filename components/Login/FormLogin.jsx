@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import axios from "@/libs/axios";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 export default function FormLogin() {
 
@@ -14,9 +15,11 @@ export default function FormLogin() {
 
     const [token, setToken] = useState();
 
+    const [error, setError] = useState(false);
+
     useEffect(() => {
-        Cookies.set('miseri-auth',token);
-    },[token])
+        Cookies.set('miseri-auth', token);
+    }, [token])
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -24,6 +27,7 @@ export default function FormLogin() {
             ...prevData,
             [name]: value,
         }));
+        setError(false);
     };
 
     const router = useRouter()
@@ -33,13 +37,11 @@ export default function FormLogin() {
         axios.post('/miseri/api/user/sign-in', JSON.stringify({
             "email": data.email,
             "password": data.password
-        })).then(function(response){
+        })).then(function (response) {
             setToken((response.data.data))
-            if (!token){
-                router.push("/dashboard")
-            }
-        }).catch(function(error){
-            console.log(error);
+            router.push("/dashboard")
+        }).catch(function (err) {
+            setError(true)
         });
     }
 
@@ -52,6 +54,11 @@ export default function FormLogin() {
                             <h3 className="font-playfair text-4xl">Bienvenido</h3>
                             <h4 className="font-lato text-lg">Inicia sesión en tu cuenta</h4>
                         </div>
+                        {error ?
+                            <div className="bg-red-400 text-center mt-4">
+                                <p className="text-sm text-white py-1.5">Usuario o contrasena incorrectos</p>
+                            </div>
+                            : ''}
                         <div className="flex flex-col mt-12">
                             <label
                                 htmlFor="email"
@@ -88,7 +95,7 @@ export default function FormLogin() {
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="flex justify-between mb-8 mt-6">
+                        <div className="flex justify-start mb-8 mt-6">
                             <div className="flex items-center">
                                 <input
                                     id="checkbox"
@@ -101,11 +108,6 @@ export default function FormLogin() {
                                 >
                                     Recordarme por 30 días
                                 </label>
-                            </div>
-                            <div>
-                                <p className="font-lato text-sm text-[#656565] cursor-pointer hover:text-[#656565] duration-300 text-center sm:text-left">
-                                    ¿Olvidaste tú contraseña?
-                                </p>
                             </div>
                         </div>
                         <div>
@@ -120,20 +122,12 @@ export default function FormLogin() {
                 </form>
                 <form action="">
                     <div className="sm:mx-16">
-                        <button
-                            type="submit"
+                        <Link
+                            href="/"
                             className="mt-4 font-lato text-[0.920rem] border-[0.1px] w-full hover:border-b-2 py-1 duration-300 cursor-pointer flex items-center justify-center"
                         >
-                            <span>
-                                <Image 
-                                width={500}
-                                height={500}
-                                className="h-3 w-3 sm:h-5 sm:w-5 mx-4" 
-                                src="google.png" 
-                                alt="google" />
-                            </span>
-                            Ingresar con Google
-                        </button>
+                            Volver al inicio
+                        </Link>
                     </div>
                 </form>
             </div>
