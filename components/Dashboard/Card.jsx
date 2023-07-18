@@ -3,10 +3,9 @@ import React from 'react'
 export default function Card(props) {
 
     const data = props.data;
-    console.log(data)
 
     return (
-        <div className='w-[160px] mt-12'>
+        <div className='w-[120px] sm:w-[140px] lg:w-[160px] mt-12'>
             <div className="relative overflow-hidden bg-white px-4 pt-5 pb-8 shadow sm:px-6 sm:pt-6">
                 <dt className='flex flex-col items-center'>
                     <p className="truncate text-medium font-lato  text-[#18181A]">
