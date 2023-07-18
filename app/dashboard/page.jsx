@@ -10,16 +10,15 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(true);
 
-  const URI = process.env.NEXT_PUBLIC_SOCKET_URL;
-  const token = Cookies.get('miseri-auth');
-
-  const socket = io(URI, {
-    auth: {
-      token: token
-    }
-  });
-
   useEffect(() => {
+    const URI = process.env.NEXT_PUBLIC_SOCKET_URL;
+    const token = Cookies.get('miseri-auth');
+    const socket = io(URI, {
+      auth: {
+        token: token
+      }
+    });
+
     socket.on('data', (data) => {
       console.log(`Data recibida del servidor: ${data}`)
     });

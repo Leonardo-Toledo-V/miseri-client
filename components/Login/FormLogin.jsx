@@ -20,6 +20,16 @@ export default function FormLogin() {
 
     const [showPassword, setShowPassoword] = useState(false);
 
+    const [disabled, setDisabled] = useState(true);
+
+    useEffect(() => {
+        if (data.password.length >= 5 && data.email.includes("@")) {
+            setDisabled(false);
+        } else {
+            setDisabled(true);
+        }
+    })
+
     useEffect(() => {
         Cookies.set('miseri-auth', token);
     }, [token])
@@ -94,10 +104,10 @@ export default function FormLogin() {
                             <div className="flex justify-between">
                                 <input
                                     className="bg-[#F3F6FB] py-1.5 pl-2 text-sm text-left w-5/6"
-                                    type={showPassword ? "text": "password"}
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     id="password"
-                                    placeholder={showPassword ? "yourpasswordhere": "●●●●●●●●●●"}
+                                    placeholder={showPassword ? "yourpasswordhere" : "●●●●●●●●●●"}
                                     autoComplete="off"
                                     required
                                     onChange={handleChange}
@@ -126,7 +136,13 @@ export default function FormLogin() {
                             </div>
                         </div>
                         <div>
-                            <input className="bg-[#373737] text-white font-lato w-full py-1 hover:bg-[#4e4e4e] duration-300 cursor-pointer" type="submit" />
+                            <button
+                                type="button"
+                                className={disabled ? "bg-[#7f7f7f] text-white font-lato w-full py-1 duration-300" : "bg-[#373737] text-white font-lato w-full py-1 hover:bg-[#4e4e4e] duration-300 cursor-pointer"}
+                                disabled={disabled}
+                            >
+                                Enviar
+                            </button>
                         </div>
                         <div className="flex items-center justify-center mt-4 ">
                             <hr className="w-52" />

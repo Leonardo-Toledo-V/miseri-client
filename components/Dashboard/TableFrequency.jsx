@@ -23,7 +23,7 @@ export default function TableFrequency(props) {
                     <tbody className='text-center divide-y divide-gray-100'>
                         {data.frequency.map((data) => {
                             return (
-                                <tr>
+                                <tr key={data}>
                                     <td className='tableCard'>
                                         {data.limInf}
                                     </td>

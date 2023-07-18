@@ -5,13 +5,12 @@ import { BsDownload } from "react-icons/bs"
 
 export default function Reports() {
 
-    const URL = `${process.env.NEXT_PUBLIC_PDF_URL}/pdf/all`;
-
     const [data, setData] = useState([]);
-
+    
     const [error, setError] = useState(false);
-
+    
     useEffect(() => {
+        const URL = `${process.env.NEXT_PUBLIC_PDF_URL}/pdf/all`;
         axios(URL).then(function (response) {
             setData(response.data)
         }).catch(function (err) {
