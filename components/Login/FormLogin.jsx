@@ -73,7 +73,7 @@ export default function FormLogin() {
                         </div>
                         {error ?
                             <div className="bg-red-400 text-center mt-4">
-                                <p className="text-sm text-white py-1.5">Usuario o contrasena incorrectos</p>
+                                <p className="text-sm text-white py-1.5">Usuario o contraseña incorrectos</p>
                             </div>
                             : ''}
                         <div className="flex flex-col mt-12">
@@ -137,7 +137,7 @@ export default function FormLogin() {
                         </div>
                         <div>
                             <button
-                                type="button"
+                                type="submit"
                                 className={disabled ? "bg-[#7f7f7f] text-white font-lato w-full py-1 duration-300" : "bg-[#373737] text-white font-lato w-full py-1 hover:bg-[#4e4e4e] duration-300 cursor-pointer"}
                                 disabled={disabled}
                             >

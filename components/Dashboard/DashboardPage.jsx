@@ -9,58 +9,47 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const stats = [
-  {
-    id: 1,
-    name: "Calidad de aire",
-    stat: "Buena",
-    icon: WiStrongWind,
-    change: "Similar a la de ayer",
-    changeType: "increase",
-  },
-  {
-    id: 2,
-    name: "Gas",
-    stat: "0.72%",
-    icon: GiGasMask,
-    change: "0.03%",
-    changeType: "decrease",
-  },
-  {
-    id: 3,
-    name: "Intensidad de luz",
-    stat: "87.37%",
-    icon: WiHorizonAlt,
-    change: "31%",
-    changeType: "increase",
-  },
-  {
-    id: 4,
-    name: "Niveles de humedad",
-    stat: "86%",
-    icon: WiHumidity,
-    change: "67%",
-    changeType: "increase",
-  },
-  {
-    id: 5,
-    name: "Temperatura",
-    stat: "23.4°",
-    icon: WiThermometer,
-    change: "0.4%",
-    changeType: "increase",
-  },
-  {
-    id: 6,
-    name: "Batería",
-    stat: "63%",
-    icon: Battery100Icon,
-    change: "3.2%",
-    changeType: "decrease",
-  },
-];
 
-export default function DashboardPage() {
+
+export default function DashboardPage(props) {
+  const stats = [
+    {
+      id: 1,
+      name: "Calidad de aire",
+      stat: props.co.toFixed(2) +" ppm",
+      icon: WiStrongWind,
+    },
+    {
+      id: 2,
+      name: "Gas",
+      stat: props.gas.toFixed(2) + " ppm",
+      icon: GiGasMask,
+    },
+    {
+      id: 3,
+      name: "Intensidad de luz",
+      stat: props.lightA + " %",
+      icon: WiHorizonAlt,
+    },
+    {
+      id: 4,
+      name: "Niveles de humedad",
+      stat: props.humidityA + " %",
+      icon: WiHumidity,
+    },
+    {
+      id: 5,
+      name: "Temperatura A",
+      stat: props.temperatureA.toFixed(2) +" °",
+      icon: WiThermometer,
+    },
+    {
+      id: 6,
+      name: "Temperatura B",
+      stat: props.temperatureB.toFixed(2) + " °",
+      icon: WiThermometer,
+    },
+  ];
   return (
     <>
       <div>
@@ -97,34 +86,7 @@ export default function DashboardPage() {
                             <p className="text-2xl font-semibold text-[#18181A]">
                               {item.stat}
                             </p>
-                            <p
-                              className={classNames(
-                                item.changeType === "increase"
-                                  ? "text-green-600"
-                                  : "text-red-600",
-                                "ml-2 flex items-baseline text-sm font-semibold"
-                              )}
-                            >
-                              {item.changeType === "increase" ? (
-                                <ArrowUpIcon
-                                  className="h-5 w-5 flex-shrink-0 self-center text-green-500"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <ArrowDownIcon
-                                  className="h-5 w-5 flex-shrink-0 self-center text-red-500"
-                                  aria-hidden="true"
-                                />
-                              )}
-                              <span className="sr-only">
-                                {" "}
-                                {item.changeType === "increase"
-                                  ? "Increased"
-                                  : "Decreased"}{" "}
-                                by{" "}
-                              </span>
-                              {item.change}
-                            </p>
+
                             <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6"></div>
                           </dd>
                         </div>

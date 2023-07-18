@@ -1,6 +1,4 @@
 import Axios from 'axios';
-import Cookies from 'js-cookie';
-
 
 const axios = Axios.create({
     maxBodyLength: Infinity,
@@ -10,5 +8,6 @@ const axios = Axios.create({
         'Content-Type': 'application/json'
     },
 });
+
 
 export default axios;

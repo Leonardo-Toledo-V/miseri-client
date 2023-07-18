@@ -14,7 +14,7 @@ export default function Reports() {
         axios(URL).then(function (response) {
             setData(response.data)
         }).catch(function (err) {
-            setError(err)
+            setError(true)
         });
     }, []);
 
@@ -56,6 +56,7 @@ export default function Reports() {
                     <div className='flex justify-between items-center  text-[#2d2d30] p-1.5 space-x-3 cursor-pointer hover:scale-110 duration-300'>
                         <BsDownload className='h-4 w-4' />
                         <a
+                            target='_blank'
                             className='font-lato text-xs'
                             href={data.humidity}
                             download
@@ -72,6 +73,7 @@ export default function Reports() {
                     <div className='flex justify-between items-center text-[#2d2d30] p-1.5 space-x-3 cursor-pointer hover:scale-110 duration-300'>
                         <BsDownload className='h-4 w-4' />
                         <a
+                            target='_blank'
                             className='font-lato text-xs'
                             href={data.light}
                             download
@@ -88,6 +90,7 @@ export default function Reports() {
                     <div className='flex justify-between items-center text-[#2d2d30] p-1.5 space-x-3 cursor-pointer hover:scale-110 duration-300'>
                         <BsDownload className='h-4 w-4' />
                         <a
+                            target='_blank'
                             className='font-lato text-xs'
                             href={data.quality}
                             download
@@ -104,6 +107,7 @@ export default function Reports() {
                     <div className='flex justify-between items-center text-[#2d2d30] p-1.5 space-x-3 cursor-pointer hover:scale-110 duration-300'>
                         <BsDownload className='h-4 w-4' />
                         <a
+                            target='_blank'
                             className='font-lato text-xs'
                             href={data.temperature}
                             download
