@@ -1,14 +1,8 @@
 "use client";
 import React from 'react'
-import { Battery100Icon } from "@heroicons/react/24/outline";
-import { ArrowDownIcon, ArrowUpIcon } from "@heroicons/react/20/solid";
 import { WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer } from "react-icons/wi";
 import {GiGasMask} from "react-icons/gi"
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
+import LineChart from '../Graphics/Line';
 
 
 export default function DashboardPage(props) {
@@ -50,6 +44,8 @@ export default function DashboardPage(props) {
       icon: WiThermometer,
     },
   ];
+
+
   return (
     <>
       <div>
@@ -57,7 +53,7 @@ export default function DashboardPage(props) {
           <main className="flex-1">
             <div className='px-4 pb-12 lg:pb-16'>
               <div>
-                <h1 className="text-lg font-semibold leading-6 text-gray-600">
+                <h1 className="text-lg font-semibold leading-6 text-gray-300">
                   Datos en tiempo real
                 </h1>
               </div>
@@ -69,12 +65,12 @@ export default function DashboardPage(props) {
                       {stats.map((item) => (
                         <div
                           key={item.id}
-                          className="relative overflow-hidden rounded-lg bg-white px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
+                          className="relative overflow-hidden rounded-lg bg-[#18181A] px-4 pt-5 pb-12 shadow sm:px-6 sm:pt-6"
                         >
                           <dt>
-                            <div className="absolute rounded-md bg-[#18181A] p-3">
+                            <div className="absolute rounded-md p-3">
                               <item.icon
-                                className="h-6 w-6 text-white"
+                                className="h-10 w-10 text-white"
                                 aria-hidden="true"
                               />
                             </div>
@@ -82,12 +78,11 @@ export default function DashboardPage(props) {
                               {item.name}
                             </p>
                           </dt>
-                          <dd className="ml-16 flex items-baseline pb-6 sm:pb-7">
-                            <p className="text-2xl font-semibold text-[#18181A]">
+                          <dd className="ml-16 flex items-baseline pb-6 sm:pb-3">
+                            <p className="text-2xl font-semibold text-gray-300">
                               {item.stat}
                             </p>
-
-                            <div className="absolute inset-x-0 bottom-0 bg-gray-50 px-4 py-4 sm:px-6"></div>
+                            <div className="absolute inset-x-0 bottom-0 bg-[#141414] px-4 py-4 sm:px-6"></div>
                           </dd>
                         </div>
                       ))}
@@ -95,10 +90,9 @@ export default function DashboardPage(props) {
                   </div>
                   {/* Ends here */}
                 </div>
-                <div className="py-4">
-                  <div className="h-64 rounded-lg border-4 border-dashed border-gray-200" />
+                <div className="pt-12">
+                  <LineChart></LineChart>
                 </div>
-                {/* /End replace */}
               </div>
             </div>
           </main>

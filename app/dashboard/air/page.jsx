@@ -26,9 +26,9 @@ export default function AirPage() {
         return (
             <>
                 <DashboardPanel>
-                    <div className='flex justify-center items-center w-full h-full'>
-                        <div className='w-[40px] text-gray-400'>
-                            <AiOutlineLoading3Quarters className='animate-spin w-full h-full mt-32' />
+                    <div className='flex justify-center items-center w-full h-screen bg-[#101010]'>
+                        <div className='w-[40px] text-gray-400 mt-[-150px]'>
+                            <AiOutlineLoading3Quarters className='animate-spin w-full h-full' />
                         </div>
                     </div>
                 </DashboardPanel>

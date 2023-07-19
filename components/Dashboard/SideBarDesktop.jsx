@@ -25,7 +25,7 @@ export default function SideBarDesktop() {
     <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
       {/* Sidebar component, swap this element with another sidebar if you like */}
       <div className="flex min-h-0 flex-1 flex-col bg-[#18181A]">
-        <div className="flex h-16 justify-center items-center bg-[#333333] px-4">
+        <div className="flex h-16 justify-center items-center bg-[#18181A] px-4">
           <Image
             width={256}
             height={256}

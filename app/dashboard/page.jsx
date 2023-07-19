@@ -3,7 +3,6 @@ import DashboardPanel from '@/components/Dashboard/DashboardPanel'
 import DashboardPage from '@/components/Dashboard/DashboardPage'
 import { useEffect, useState } from 'react'
 import { BeatLoader } from 'react-spinners'
-import Cookies from 'js-cookie'
 import { io } from "socket.io-client";
 
 export default function Dashboard() {
@@ -48,12 +47,12 @@ export default function Dashboard() {
   return (
     <>
       {loading ?
-        <div className='w-full h-screen'>
+        <div className='w-full h-screen bg-[#101010]'>
           <div className='flex items-center justify-center h-full'>
             <div className='max-w-[400px]'>
               <BeatLoader
                 size={20}
-                color={"#18181A"}
+                color={"#FFFFFF"}
                 loading={loading}
               />
             </div>
