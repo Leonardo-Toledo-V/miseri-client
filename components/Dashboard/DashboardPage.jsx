@@ -1,8 +1,10 @@
 "use client";
 import React from 'react'
 import { WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer } from "react-icons/wi";
-import {GiGasMask} from "react-icons/gi"
-import LineChart from '../Graphics/Line';
+import { GiGasMask } from "react-icons/gi"
+import LineChart from '../Graphics/LineChart';
+import { BarChart } from '../Graphics/BarChart';
+import { PieChart } from '../Graphics/PieChart';
 
 
 export default function DashboardPage(props) {
@@ -10,7 +12,7 @@ export default function DashboardPage(props) {
     {
       id: 1,
       name: "Calidad de aire",
-      stat: props.co.toFixed(2) +" ppm",
+      stat: props.co.toFixed(2) + " ppm",
       icon: WiStrongWind,
     },
     {
@@ -34,7 +36,7 @@ export default function DashboardPage(props) {
     {
       id: 5,
       name: "Temperatura A",
-      stat: props.temperatureA.toFixed(2) +" °",
+      stat: props.temperatureA.toFixed(2) + " °",
       icon: WiThermometer,
     },
     {
@@ -91,7 +93,14 @@ export default function DashboardPage(props) {
                   {/* Ends here */}
                 </div>
                 <div className="pt-12">
-                  <LineChart></LineChart>
+                  <LineChart
+                    sensors={props}
+                  />
+                </div>
+                <div className="pt-12">
+                  <BarChart
+                    sensors={props}
+                  />
                 </div>
               </div>
             </div>

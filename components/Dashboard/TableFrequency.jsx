@@ -6,10 +6,10 @@ export default function TableFrequency(props) {
     const data = props.data;   
     
     return (
-        <>
+        <div className='h-screen'>
             <div className='overflow-auto block'>
-                <table className='font-extralight border-[0.5px] border-slate-200 w-full'>
-                    <thead className='text-white bg-gray-50 border-b-[0.8px] border-slate-300'>
+                <table className='font-extralight w-full'>
+                    <thead className='text-white bg-[#141414]'>
                         <tr className='text-center'>
                             <th className='tableTitle'>Límite inferior</th>
                             <th className='tableTitle'>Límite superior</th>
@@ -20,7 +20,7 @@ export default function TableFrequency(props) {
                             <th className='tableTitle'>Límite superior exacto</th>
                         </tr>
                     </thead>
-                    <tbody className='text-center divide-y divide-gray-100'>
+                    <tbody className='text-center divide-y border-[#141414] divide-[#242424]'>
                         {data.frequency.map((data) => {
                             return (
                                 <tr key={data}>
@@ -63,6 +63,6 @@ export default function TableFrequency(props) {
                 <Card data={data.variance} />
                 <Card data={data.standardDeviation} />
             </div>
-        </>
+        </div>
     )
 }
