@@ -1,7 +1,7 @@
 'use client'
 import { Fragment, useContext } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import {NavbarContext} from "@/hooks/NavbarProvider"
+import { NavbarContext } from "@/hooks/NavbarProvider"
 import { Bars3BottomLeftIcon, BellIcon, UserIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link';
 import Cookies from 'js-cookie';
@@ -11,16 +11,16 @@ const userNavigation = [
 ]
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
-  }
+}
 
-    const handleLogOut = () => {
-        Cookies.remove('miseri-auth')
-    }
+const handleLogOut = () => {
+    Cookies.remove('miseri-auth')
+}
 
 
 export default function NavbarDashboard() {
-    const {setSidebarOpen} = useContext(NavbarContext)
-    
+    const { setSidebarOpen } = useContext(NavbarContext)
+
     return (
         <div className="sticky top-0 z-10 flex h-16 flex-shrink-0 bg-[#101010] shadow">
             <button
@@ -33,13 +33,6 @@ export default function NavbarDashboard() {
             </button>
             <div className="flex flex-1 justify-end px-4">
                 <div className="ml-4 flex items-center md:ml-6">
-                    <button
-                        type="button"
-                        className="rounded-full bg-[#101010] p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-                    >
-                        <span className="sr-only">View notifications</span>
-                        <BellIcon className="h-6 w-6" aria-hidden="true" />
-                    </button>
                     {/* Profile dropdown */}
                     <Menu as="div" className="relative ml-3">
                         <div>

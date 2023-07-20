@@ -6,7 +6,7 @@ export default function TableFrequency(props) {
     const data = props.data;   
     
     return (
-        <div className='h-screen'>
+        <div className='bg-[#101010]'>
             <div className='overflow-auto block'>
                 <table className='font-extralight w-full'>
                     <thead className='text-white bg-[#141414]'>
@@ -20,7 +20,7 @@ export default function TableFrequency(props) {
                             <th className='tableTitle'>Límite superior exacto</th>
                         </tr>
                     </thead>
-                    <tbody className='text-center divide-y border-[#141414] divide-[#242424]'>
+                    <tbody className='text-center divide-y border-[#141414] divide-[#242424] bg-[#101010]'>
                         {data.frequency.map((data) => {
                             return (
                                 <tr key={data}>
@@ -51,7 +51,7 @@ export default function TableFrequency(props) {
                     </tbody>
                 </table>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-3 justify-items-center mb-16">
                 <Card data={data.range} />
                 <Card data={data.klasses} />
                 <Card data={data.amplitude} />

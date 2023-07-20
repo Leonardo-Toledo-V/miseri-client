@@ -65,7 +65,6 @@ export default function Reports() {
                         </a>
                     </div>
                 </div>
-
                 <div className='flex justify-between items-center mt-14 border-b-[0.5px] border-gray-200'>
                     <p className='font-lato text-sm text-gray-300'>
                         Reporte del sensor de luz 2023
@@ -82,7 +81,6 @@ export default function Reports() {
                         </a>
                     </div>
                 </div>
-
                 <div className='flex justify-between items-center mt-14 border-b-[0.5px] border-gray-200'>
                     <p className='font-lato text-sm text-gray-300'>
                         Reporte del sensor de calidad del aire 2023
@@ -99,7 +97,6 @@ export default function Reports() {
                         </a>
                     </div>
                 </div>
-
                 <div className='flex justify-between items-center mt-14 border-b-[0.5px] border-gray-200'>
                     <p className='font-lato text-sm text-gray-300'>
                         Reporte del sensor de temperatura 2023
@@ -116,8 +113,6 @@ export default function Reports() {
                         </a>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )
