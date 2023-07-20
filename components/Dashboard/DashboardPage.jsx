@@ -4,12 +4,14 @@ import { WiHumidity, WiStrongWind, WiHorizonAlt, WiThermometer } from "react-ico
 import { GiGasMask } from "react-icons/gi"
 import LineChart from '../Graphics/LineChart';
 import { BarChart } from '../Graphics/BarChart';
+import { DoughnutChartA } from '../Graphics/DoughnutChartA';
+import { DoughnutChartB } from '../Graphics/DoughnutChartB';
+import { DoughnutChartC } from '../Graphics/DoughnutChartC';
 
 
 
 export default function DashboardPage(props) {
   const sensors = props;
-  console.log(sensors)
 
   const [sensores, setSensores] = useState({
     co: 0,
@@ -22,17 +24,17 @@ export default function DashboardPage(props) {
     lightB: 0,
   });
 
-    useEffect(() => {
-      setSensores({
-          co: sensors.co,
-          gas: sensors.gas,
-          humidityA: sensors.humidityA,
-          humidityB: sensors.humidityB,
-          temperatureA: sensors.temperatureA,
-          temperatureB: sensors.temperatureB,
-          lightA: sensors.lightA,
-          lightB: sensors.lightB,
-      });
+  useEffect(() => {
+    setSensores({
+      co: sensors.co,
+      gas: sensors.gas,
+      humidityA: sensors.humidityA,
+      humidityB: sensors.humidityB,
+      temperatureA: sensors.temperatureA,
+      temperatureB: sensors.temperatureB,
+      lightA: sensors.lightA,
+      lightB: sensors.lightB,
+    });
   }, [props])
 
   const stats = [
@@ -86,7 +88,6 @@ export default function DashboardPage(props) {
     },
   ];
 
-
   return (
     <>
       <div>
@@ -100,7 +101,6 @@ export default function DashboardPage(props) {
               </div>
               <div>
                 <div>
-                  {/* Starts here */}
                   <div>
                     <dl className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
                       {stats.map((item) => (
@@ -129,17 +129,32 @@ export default function DashboardPage(props) {
                       ))}
                     </dl>
                   </div>
-                  {/* Ends here */}
                 </div>
-                <div className="pt-12">
+                <div className="pt-28">
+                  <h2 className='text-lg font-semibold leading-6 text-gray-300 mb-6'>Gráfica de líneas</h2>
                   <LineChart
                     sensors={props}
                   />
                 </div>
                 <div className="pt-12">
+                  <h2 className='text-lg font-semibold leading-6 text-gray-300 mb-6'>Gráfica de barras</h2>
                   <BarChart
                     sensors={props}
                   />
+                </div>
+                <div className="py-12">
+                  <h2 className='text-lg font-semibold  text-gray-300 mb-12'>Gráfica de dona</h2>
+                  <div className='flex  items-center max-w-[18rem] space-x-2'>
+                    <DoughnutChartA
+                      sensors={props}
+                    />
+                    <DoughnutChartB
+                      sensors={props}
+                    />
+                    <DoughnutChartC
+                      sensors={props}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

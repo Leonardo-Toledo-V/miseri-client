@@ -107,7 +107,6 @@ export default function LineChart(props) {
             const newTemperature = [...temperature];
             const newLight = [...light];
             const newHumidity = [...humidity];
-
             // Si el tamaño del sensor es mayor o igual a 7, eliminamos el primer dato (cola)
             if (newCo.length >= 7) {
                 newCo.shift();
