@@ -33,9 +33,9 @@ export const options = {
 
 
 export default function LineChart(props) {
-    const {sensors} = props;
+    const { sensors } = props;
 
-    const [sensores, setSensores]= useState({
+    const [sensores, setSensores] = useState({
         co: 0,
         gas: 0,
         humidity: 0,
@@ -51,7 +51,7 @@ export default function LineChart(props) {
             temperature: sensors.temperatureA,
             light: sensors.lightA,
         });
-    },[props])
+    }, [props])
 
     const [co, setCo] = useState([]);
     const [gas, setGas] = useState([]);
@@ -100,7 +100,7 @@ export default function LineChart(props) {
 
 
     useEffect(() => {
-            const intervalId = setInterval(() => {
+        const intervalId = setInterval(() => {
             const newHour = new Date().toLocaleTimeString();
             const newCo = [...co];
             const newGas = [...gas];
@@ -132,7 +132,6 @@ export default function LineChart(props) {
 
             newHumidity.push(sensores.humidity);
             setHumidity(newHumidity);
-            
 
             time.push(newHour);
             setHours(time);
