@@ -144,14 +144,17 @@ export default function DashboardPage(props) {
                 </div>
                 <div className="py-12">
                   <h2 className='text-lg font-semibold  text-gray-300 mb-12'>Gráfica de dona</h2>
-                  <div className='flex  items-center max-w-[18rem] space-x-2'>
+                  <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                     <DoughnutChartA
+                    className="col-span-1"
                       sensors={props}
                     />
                     <DoughnutChartB
+                    className="col-span-1"
                       sensors={props}
                     />
                     <DoughnutChartC
+                      className="col-span-1"
                       sensors={props}
                     />
                   </div>

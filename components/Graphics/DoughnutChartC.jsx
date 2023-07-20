@@ -76,8 +76,8 @@ export function DoughnutChartC(props) {
         <section >
             <div className="overflow-hidden ">
                 <div className="text-gray-400">
-                    <div className="flex justify-start items-center mb-4 space-x-2">
-                        <h2 className=" font-medium text-md">
+                    <div className="flex justify-start items-center mb-4 space-x-4">
+                        <h2 className=" font-medium text-md mt-8">
                             Luz
                         </h2>
                     </div>
